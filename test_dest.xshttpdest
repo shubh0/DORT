@@ -1,0 +1,9 @@
+host = "appdownloadrestd998e5467.us2.hana.ondemand.com";
+port = 443;
+pathPrefix = "/AppDownload/murphyDort";
+proxyType = http;
+proxyHost = "proxy";
+proxyPort = 8080;
+authType = basic;
+useSSL = true;
+

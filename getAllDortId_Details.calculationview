@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="getAllDortId_Details" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="getAllDortId_Details"/>
+  <metadata changedAt="2018-05-10 14:35:59.072"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="37"/>
+  <dataSources>
+    <DataSource id="DORTHEADER" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="DORT" columnObjectName="DORTHEADER"/>
+    </DataSource>
+    <DataSource id="DORTCOMMENTS" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="DORT" columnObjectName="DORTCOMMENTS"/>
+    </DataSource>
+    <DataSource id="DORTATTACHMENTS" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="DORT" columnObjectName="DORTATTACHMENTS"/>
+    </DataSource>
+    <DataSource id="DORTACTIVITYLOG" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="DORT" columnObjectName="DORTACTIVITYLOG"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="DORT_HEADER">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="DORTID"/>
+        <viewAttribute id="MERRICKID"/>
+        <viewAttribute id="RUNOPENDATE"/>
+        <viewAttribute id="RUNOPENTIME"/>
+        <viewAttribute id="RUNCLOSEDATE"/>
+        <viewAttribute id="RUNCLOSETIME"/>
+        <viewAttribute id="PRODUCTCODE"/>
+        <viewAttribute id="DISPOSITIONCODE"/>
+        <viewAttribute id="PURCHASER"/>
+        <viewAttribute id="HAULER"/>
+        <viewAttribute id="RUNTICKETNUMBER"/>
+        <viewAttribute id="OPENODOMETER"/>
+        <viewAttribute id="CLOSEODOMETER"/>
+        <viewAttribute id="OPENTEMPRATURE"/>
+        <viewAttribute id="CLOSETEMPRATURE"/>
+        <viewAttribute id="TEMPRATURECOMPENSATION"/>
+        <viewAttribute id="LINETEMPRATURE"/>
+        <viewAttribute id="LACTMETERFACTOR"/>
+        <viewAttribute id="LACTCOMPRESSIBILITYFACTOR"/>
+        <viewAttribute id="GROSSBARRELS"/>
+        <viewAttribute id="BSANDW"/>
+        <viewAttribute id="ACTUALGRAVITY"/>
+        <viewAttribute id="OBSERVEDTEMPRATURE"/>
+        <viewAttribute id="CONVERTEDGRAVITY"/>
+        <viewAttribute id="NETBARRELS"/>
+        <viewAttribute id="CREATEDBYNAME"/>
+        <viewAttribute id="CREATEDBYID"/>
+        <viewAttribute id="CREATEDON"/>
+        <viewAttribute id="REVIEWEDBYNAME"/>
+        <viewAttribute id="REVIEWEDBYID"/>
+        <viewAttribute id="REVIEWEDON"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#DORTHEADER">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MERRICKID" source="MERRICKID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENDATE" source="RUNOPENDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENTIME" source="RUNOPENTIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSEDATE" source="RUNCLOSEDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSETIME" source="RUNCLOSETIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTCODE" source="PRODUCTCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISPOSITIONCODE" source="DISPOSITIONCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PURCHASER" source="PURCHASER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HAULER" source="HAULER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNTICKETNUMBER" source="RUNTICKETNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENODOMETER" source="OPENODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSEODOMETER" source="CLOSEODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENTEMPRATURE" source="OPENTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSETEMPRATURE" source="CLOSETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEMPRATURECOMPENSATION" source="TEMPRATURECOMPENSATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LINETEMPRATURE" source="LINETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTMETERFACTOR" source="LACTMETERFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTCOMPRESSIBILITYFACTOR" source="LACTCOMPRESSIBILITYFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GROSSBARRELS" source="GROSSBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSANDW" source="BSANDW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTUALGRAVITY" source="ACTUALGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBSERVEDTEMPRATURE" source="OBSERVEDTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONVERTEDGRAVITY" source="CONVERTEDGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETBARRELS" source="NETBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYNAME" source="CREATEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYID" source="CREATEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDON" source="CREATEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYNAME" source="REVIEWEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYID" source="REVIEWEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDON" source="REVIEWEDON"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="DROP_COMMENTS">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="SERIALNO"/>
+        <viewAttribute id="DORTID"/>
+        <viewAttribute id="COMMENTS"/>
+        <viewAttribute id="COMMENTEDBYNAME"/>
+        <viewAttribute id="COMMENTEDBYID"/>
+        <viewAttribute id="COMMENTEDON"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#DORTCOMMENTS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERIALNO" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTS" source="COMMENTS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYNAME" source="COMMENTEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYID" source="COMMENTEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDON" source="COMMENTEDON"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="HEADR_CMNT" cardinality="C1_N" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="DORTID"/>
+        <viewAttribute id="MERRICKID"/>
+        <viewAttribute id="RUNOPENDATE"/>
+        <viewAttribute id="RUNOPENTIME"/>
+        <viewAttribute id="RUNCLOSEDATE"/>
+        <viewAttribute id="RUNCLOSETIME"/>
+        <viewAttribute id="PRODUCTCODE"/>
+        <viewAttribute id="DISPOSITIONCODE"/>
+        <viewAttribute id="PURCHASER"/>
+        <viewAttribute id="HAULER"/>
+        <viewAttribute id="RUNTICKETNUMBER"/>
+        <viewAttribute id="OPENODOMETER"/>
+        <viewAttribute id="CLOSEODOMETER"/>
+        <viewAttribute id="OPENTEMPRATURE"/>
+        <viewAttribute id="CLOSETEMPRATURE"/>
+        <viewAttribute id="TEMPRATURECOMPENSATION"/>
+        <viewAttribute id="LINETEMPRATURE"/>
+        <viewAttribute id="LACTMETERFACTOR"/>
+        <viewAttribute id="LACTCOMPRESSIBILITYFACTOR"/>
+        <viewAttribute id="GROSSBARRELS"/>
+        <viewAttribute id="BSANDW"/>
+        <viewAttribute id="ACTUALGRAVITY"/>
+        <viewAttribute id="OBSERVEDTEMPRATURE"/>
+        <viewAttribute id="CONVERTEDGRAVITY"/>
+        <viewAttribute id="NETBARRELS"/>
+        <viewAttribute id="CREATEDBYNAME"/>
+        <viewAttribute id="CREATEDBYID"/>
+        <viewAttribute id="CREATEDON"/>
+        <viewAttribute id="REVIEWEDBYNAME"/>
+        <viewAttribute id="REVIEWEDBYID"/>
+        <viewAttribute id="REVIEWEDON"/>
+        <viewAttribute id="SERIALNO"/>
+        <viewAttribute id="COMMENTS"/>
+        <viewAttribute id="COMMENTEDBYNAME"/>
+        <viewAttribute id="COMMENTEDBYID"/>
+        <viewAttribute id="COMMENTEDON"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#DORT_HEADER">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MERRICKID" source="MERRICKID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENDATE" source="RUNOPENDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENTIME" source="RUNOPENTIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSEDATE" source="RUNCLOSEDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSETIME" source="RUNCLOSETIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTCODE" source="PRODUCTCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISPOSITIONCODE" source="DISPOSITIONCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PURCHASER" source="PURCHASER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HAULER" source="HAULER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNTICKETNUMBER" source="RUNTICKETNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENODOMETER" source="OPENODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSEODOMETER" source="CLOSEODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENTEMPRATURE" source="OPENTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSETEMPRATURE" source="CLOSETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEMPRATURECOMPENSATION" source="TEMPRATURECOMPENSATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LINETEMPRATURE" source="LINETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTMETERFACTOR" source="LACTMETERFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTCOMPRESSIBILITYFACTOR" source="LACTCOMPRESSIBILITYFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GROSSBARRELS" source="GROSSBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSANDW" source="BSANDW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTUALGRAVITY" source="ACTUALGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBSERVEDTEMPRATURE" source="OBSERVEDTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONVERTEDGRAVITY" source="CONVERTEDGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETBARRELS" source="NETBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYNAME" source="CREATEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYID" source="CREATEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDON" source="CREATEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYNAME" source="REVIEWEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYID" source="REVIEWEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDON" source="REVIEWEDON"/>
+      </input>
+      <input node="#DROP_COMMENTS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERIALNO" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTS" source="COMMENTS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYNAME" source="COMMENTEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYID" source="COMMENTEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDON" source="COMMENTEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+      </input>
+      <joinAttribute name="DORTID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="DROPATTCH">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="SERIALNO"/>
+        <viewAttribute id="DORTID"/>
+        <viewAttribute id="ATTACHMENTDATA"/>
+        <viewAttribute id="FILETYPE"/>
+        <viewAttribute id="FILENAME"/>
+        <viewAttribute id="SHAREPOINTURL"/>
+        <viewAttribute id="ATTACHEDBYNAME"/>
+        <viewAttribute id="ATTACHEDBYID"/>
+        <viewAttribute id="ATTACHEDON"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#DORTATTACHMENTS">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERIALNO" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHMENTDATA" source="ATTACHMENTDATA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FILETYPE" source="FILETYPE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FILENAME" source="FILENAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SHAREPOINTURL" source="SHAREPOINTURL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDBYNAME" source="ATTACHEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDBYID" source="ATTACHEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDON" source="ATTACHEDON"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="HEDR_CMND_ATTCH" cardinality="C1_N" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="DROPPATCH_SERI"/>
+        <viewAttribute id="ATTACHMENTDATA"/>
+        <viewAttribute id="FILETYPE"/>
+        <viewAttribute id="FILENAME"/>
+        <viewAttribute id="SHAREPOINTURL"/>
+        <viewAttribute id="ATTACHEDBYNAME"/>
+        <viewAttribute id="ATTACHEDBYID"/>
+        <viewAttribute id="ATTACHEDON"/>
+        <viewAttribute id="DORTID"/>
+        <viewAttribute id="MERRICKID"/>
+        <viewAttribute id="RUNOPENDATE"/>
+        <viewAttribute id="RUNOPENTIME"/>
+        <viewAttribute id="RUNCLOSEDATE"/>
+        <viewAttribute id="RUNCLOSETIME"/>
+        <viewAttribute id="PRODUCTCODE"/>
+        <viewAttribute id="DISPOSITIONCODE"/>
+        <viewAttribute id="PURCHASER"/>
+        <viewAttribute id="HAULER"/>
+        <viewAttribute id="RUNTICKETNUMBER"/>
+        <viewAttribute id="OPENODOMETER"/>
+        <viewAttribute id="CLOSEODOMETER"/>
+        <viewAttribute id="OPENTEMPRATURE"/>
+        <viewAttribute id="CLOSETEMPRATURE"/>
+        <viewAttribute id="TEMPRATURECOMPENSATION"/>
+        <viewAttribute id="LINETEMPRATURE"/>
+        <viewAttribute id="LACTMETERFACTOR"/>
+        <viewAttribute id="LACTCOMPRESSIBILITYFACTOR"/>
+        <viewAttribute id="GROSSBARRELS"/>
+        <viewAttribute id="BSANDW"/>
+        <viewAttribute id="ACTUALGRAVITY"/>
+        <viewAttribute id="OBSERVEDTEMPRATURE"/>
+        <viewAttribute id="CONVERTEDGRAVITY"/>
+        <viewAttribute id="NETBARRELS"/>
+        <viewAttribute id="CREATEDBYNAME"/>
+        <viewAttribute id="CREATEDBYID"/>
+        <viewAttribute id="CREATEDON"/>
+        <viewAttribute id="REVIEWEDBYNAME"/>
+        <viewAttribute id="REVIEWEDBYID"/>
+        <viewAttribute id="REVIEWEDON"/>
+        <viewAttribute id="SERIALNO"/>
+        <viewAttribute id="COMMENTS"/>
+        <viewAttribute id="COMMENTEDBYNAME"/>
+        <viewAttribute id="COMMENTEDBYID"/>
+        <viewAttribute id="COMMENTEDON"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HEADR_CMNT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MERRICKID" source="MERRICKID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENDATE" source="RUNOPENDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENTIME" source="RUNOPENTIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSEDATE" source="RUNCLOSEDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSETIME" source="RUNCLOSETIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTCODE" source="PRODUCTCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISPOSITIONCODE" source="DISPOSITIONCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PURCHASER" source="PURCHASER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HAULER" source="HAULER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNTICKETNUMBER" source="RUNTICKETNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENODOMETER" source="OPENODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSEODOMETER" source="CLOSEODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENTEMPRATURE" source="OPENTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSETEMPRATURE" source="CLOSETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEMPRATURECOMPENSATION" source="TEMPRATURECOMPENSATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LINETEMPRATURE" source="LINETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTMETERFACTOR" source="LACTMETERFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTCOMPRESSIBILITYFACTOR" source="LACTCOMPRESSIBILITYFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GROSSBARRELS" source="GROSSBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSANDW" source="BSANDW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTUALGRAVITY" source="ACTUALGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBSERVEDTEMPRATURE" source="OBSERVEDTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONVERTEDGRAVITY" source="CONVERTEDGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETBARRELS" source="NETBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYNAME" source="CREATEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYID" source="CREATEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDON" source="CREATEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYNAME" source="REVIEWEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYID" source="REVIEWEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDON" source="REVIEWEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERIALNO" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTS" source="COMMENTS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYNAME" source="COMMENTEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYID" source="COMMENTEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDON" source="COMMENTEDON"/>
+      </input>
+      <input node="#DROPATTCH">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DROPPATCH_SERI" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHMENTDATA" source="ATTACHMENTDATA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FILETYPE" source="FILETYPE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FILENAME" source="FILENAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SHAREPOINTURL" source="SHAREPOINTURL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDBYNAME" source="ATTACHEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDBYID" source="ATTACHEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDON" source="ATTACHEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+      </input>
+      <joinAttribute name="DORTID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="ACtivity_log">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="SERIALNO"/>
+        <viewAttribute id="DORTID"/>
+        <viewAttribute id="ACTIONTYPE"/>
+        <viewAttribute id="ACTEDBYNAME"/>
+        <viewAttribute id="ACTEDBYID"/>
+        <viewAttribute id="ACTIONDATE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#DORTACTIVITYLOG">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERIALNO" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTIONTYPE" source="ACTIONTYPE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTEDBYNAME" source="ACTEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTEDBYID" source="ACTEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTIONDATE" source="ACTIONDATE"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="all" cardinality="C1_N" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="DROPPATCH_SERI"/>
+        <viewAttribute id="ATTACHMENTDATA"/>
+        <viewAttribute id="FILETYPE"/>
+        <viewAttribute id="FILENAME"/>
+        <viewAttribute id="SHAREPOINTURL"/>
+        <viewAttribute id="ATTACHEDBYNAME"/>
+        <viewAttribute id="ATTACHEDBYID"/>
+        <viewAttribute id="ATTACHEDON"/>
+        <viewAttribute id="log_serial"/>
+        <viewAttribute id="ACTIONTYPE"/>
+        <viewAttribute id="ACTEDBYNAME"/>
+        <viewAttribute id="ACTEDBYID"/>
+        <viewAttribute id="ACTIONDATE"/>
+        <viewAttribute id="DORTID"/>
+        <viewAttribute id="MERRICKID"/>
+        <viewAttribute id="RUNOPENDATE"/>
+        <viewAttribute id="RUNOPENTIME"/>
+        <viewAttribute id="RUNCLOSEDATE"/>
+        <viewAttribute id="RUNCLOSETIME"/>
+        <viewAttribute id="PRODUCTCODE"/>
+        <viewAttribute id="DISPOSITIONCODE"/>
+        <viewAttribute id="PURCHASER"/>
+        <viewAttribute id="HAULER"/>
+        <viewAttribute id="RUNTICKETNUMBER"/>
+        <viewAttribute id="OPENODOMETER"/>
+        <viewAttribute id="CLOSEODOMETER"/>
+        <viewAttribute id="OPENTEMPRATURE"/>
+        <viewAttribute id="CLOSETEMPRATURE"/>
+        <viewAttribute id="TEMPRATURECOMPENSATION"/>
+        <viewAttribute id="LINETEMPRATURE"/>
+        <viewAttribute id="LACTMETERFACTOR"/>
+        <viewAttribute id="LACTCOMPRESSIBILITYFACTOR"/>
+        <viewAttribute id="GROSSBARRELS"/>
+        <viewAttribute id="BSANDW"/>
+        <viewAttribute id="ACTUALGRAVITY"/>
+        <viewAttribute id="OBSERVEDTEMPRATURE"/>
+        <viewAttribute id="CONVERTEDGRAVITY"/>
+        <viewAttribute id="NETBARRELS"/>
+        <viewAttribute id="CREATEDBYNAME"/>
+        <viewAttribute id="CREATEDBYID"/>
+        <viewAttribute id="CREATEDON"/>
+        <viewAttribute id="REVIEWEDBYNAME"/>
+        <viewAttribute id="REVIEWEDBYID"/>
+        <viewAttribute id="REVIEWEDON"/>
+        <viewAttribute id="SERIALNO"/>
+        <viewAttribute id="COMMENTS"/>
+        <viewAttribute id="COMMENTEDBYNAME"/>
+        <viewAttribute id="COMMENTEDBYID"/>
+        <viewAttribute id="COMMENTEDON"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HEDR_CMND_ATTCH">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DROPPATCH_SERI" source="DROPPATCH_SERI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHMENTDATA" source="ATTACHMENTDATA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FILETYPE" source="FILETYPE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FILENAME" source="FILENAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SHAREPOINTURL" source="SHAREPOINTURL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDBYNAME" source="ATTACHEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDBYID" source="ATTACHEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATTACHEDON" source="ATTACHEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MERRICKID" source="MERRICKID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENDATE" source="RUNOPENDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNOPENTIME" source="RUNOPENTIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSEDATE" source="RUNCLOSEDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNCLOSETIME" source="RUNCLOSETIME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTCODE" source="PRODUCTCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DISPOSITIONCODE" source="DISPOSITIONCODE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PURCHASER" source="PURCHASER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HAULER" source="HAULER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RUNTICKETNUMBER" source="RUNTICKETNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENODOMETER" source="OPENODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSEODOMETER" source="CLOSEODOMETER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OPENTEMPRATURE" source="OPENTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLOSETEMPRATURE" source="CLOSETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEMPRATURECOMPENSATION" source="TEMPRATURECOMPENSATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LINETEMPRATURE" source="LINETEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTMETERFACTOR" source="LACTMETERFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LACTCOMPRESSIBILITYFACTOR" source="LACTCOMPRESSIBILITYFACTOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GROSSBARRELS" source="GROSSBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSANDW" source="BSANDW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTUALGRAVITY" source="ACTUALGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OBSERVEDTEMPRATURE" source="OBSERVEDTEMPRATURE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONVERTEDGRAVITY" source="CONVERTEDGRAVITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETBARRELS" source="NETBARRELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYNAME" source="CREATEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDBYID" source="CREATEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDON" source="CREATEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYNAME" source="REVIEWEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDBYID" source="REVIEWEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REVIEWEDON" source="REVIEWEDON"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERIALNO" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTS" source="COMMENTS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYNAME" source="COMMENTEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDBYID" source="COMMENTEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTEDON" source="COMMENTEDON"/>
+      </input>
+      <input node="#ACtivity_log">
+        <mapping xsi:type="Calculation:AttributeMapping" target="log_serial" source="SERIALNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTIONTYPE" source="ACTIONTYPE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTEDBYNAME" source="ACTEDBYNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTEDBYID" source="ACTEDBYID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACTIONDATE" source="ACTIONDATE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DORTID" source="DORTID"/>
+      </input>
+      <joinAttribute name="DORTID"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="all">
+    <descriptions/>
+    <attributes>
+      <attribute id="DROPPATCH_SERI" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SERIALNO"/>
+        <keyMapping columnObjectName="all" columnName="DROPPATCH_SERI"/>
+      </attribute>
+      <attribute id="ATTACHMENTDATA" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ATTACHMENTDATA"/>
+        <keyMapping columnObjectName="all" columnName="ATTACHMENTDATA"/>
+      </attribute>
+      <attribute id="FILETYPE" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FILETYPE"/>
+        <keyMapping columnObjectName="all" columnName="FILETYPE"/>
+      </attribute>
+      <attribute id="FILENAME" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FILENAME"/>
+        <keyMapping columnObjectName="all" columnName="FILENAME"/>
+      </attribute>
+      <attribute id="SHAREPOINTURL" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SHAREPOINTURL"/>
+        <keyMapping columnObjectName="all" columnName="SHAREPOINTURL"/>
+      </attribute>
+      <attribute id="ATTACHEDBYNAME" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ATTACHEDBYNAME"/>
+        <keyMapping columnObjectName="all" columnName="ATTACHEDBYNAME"/>
+      </attribute>
+      <attribute id="ATTACHEDBYID" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ATTACHEDBYID"/>
+        <keyMapping columnObjectName="all" columnName="ATTACHEDBYID"/>
+      </attribute>
+      <attribute id="ATTACHEDON" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ATTACHEDON"/>
+        <keyMapping columnObjectName="all" columnName="ATTACHEDON"/>
+      </attribute>
+      <attribute id="log_serial" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SERIALNO"/>
+        <keyMapping columnObjectName="all" columnName="log_serial"/>
+      </attribute>
+      <attribute id="ACTIONTYPE" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTIONTYPE"/>
+        <keyMapping columnObjectName="all" columnName="ACTIONTYPE"/>
+      </attribute>
+      <attribute id="ACTEDBYNAME" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTEDBYNAME"/>
+        <keyMapping columnObjectName="all" columnName="ACTEDBYNAME"/>
+      </attribute>
+      <attribute id="ACTEDBYID" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTEDBYID"/>
+        <keyMapping columnObjectName="all" columnName="ACTEDBYID"/>
+      </attribute>
+      <attribute id="ACTIONDATE" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTIONDATE"/>
+        <keyMapping columnObjectName="all" columnName="ACTIONDATE"/>
+      </attribute>
+      <attribute id="DORTID" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DORTID"/>
+        <keyMapping columnObjectName="all" columnName="DORTID"/>
+      </attribute>
+      <attribute id="MERRICKID" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MERRICKID"/>
+        <keyMapping columnObjectName="all" columnName="MERRICKID"/>
+      </attribute>
+      <attribute id="RUNOPENDATE" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RUNOPENDATE"/>
+        <keyMapping columnObjectName="all" columnName="RUNOPENDATE"/>
+      </attribute>
+      <attribute id="RUNOPENTIME" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RUNOPENTIME"/>
+        <keyMapping columnObjectName="all" columnName="RUNOPENTIME"/>
+      </attribute>
+      <attribute id="RUNCLOSEDATE" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RUNCLOSEDATE"/>
+        <keyMapping columnObjectName="all" columnName="RUNCLOSEDATE"/>
+      </attribute>
+      <attribute id="RUNCLOSETIME" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RUNCLOSETIME"/>
+        <keyMapping columnObjectName="all" columnName="RUNCLOSETIME"/>
+      </attribute>
+      <attribute id="PRODUCTCODE" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTCODE"/>
+        <keyMapping columnObjectName="all" columnName="PRODUCTCODE"/>
+      </attribute>
+      <attribute id="DISPOSITIONCODE" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DISPOSITIONCODE"/>
+        <keyMapping columnObjectName="all" columnName="DISPOSITIONCODE"/>
+      </attribute>
+      <attribute id="PURCHASER" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PURCHASER"/>
+        <keyMapping columnObjectName="all" columnName="PURCHASER"/>
+      </attribute>
+      <attribute id="HAULER" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="HAULER"/>
+        <keyMapping columnObjectName="all" columnName="HAULER"/>
+      </attribute>
+      <attribute id="RUNTICKETNUMBER" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RUNTICKETNUMBER"/>
+        <keyMapping columnObjectName="all" columnName="RUNTICKETNUMBER"/>
+      </attribute>
+      <attribute id="OPENODOMETER" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="OPENODOMETER"/>
+        <keyMapping columnObjectName="all" columnName="OPENODOMETER"/>
+      </attribute>
+      <attribute id="CLOSEODOMETER" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLOSEODOMETER"/>
+        <keyMapping columnObjectName="all" columnName="CLOSEODOMETER"/>
+      </attribute>
+      <attribute id="OPENTEMPRATURE" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="OPENTEMPRATURE"/>
+        <keyMapping columnObjectName="all" columnName="OPENTEMPRATURE"/>
+      </attribute>
+      <attribute id="CLOSETEMPRATURE" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLOSETEMPRATURE"/>
+        <keyMapping columnObjectName="all" columnName="CLOSETEMPRATURE"/>
+      </attribute>
+      <attribute id="TEMPRATURECOMPENSATION" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEMPRATURECOMPENSATION"/>
+        <keyMapping columnObjectName="all" columnName="TEMPRATURECOMPENSATION"/>
+      </attribute>
+      <attribute id="LINETEMPRATURE" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LINETEMPRATURE"/>
+        <keyMapping columnObjectName="all" columnName="LINETEMPRATURE"/>
+      </attribute>
+      <attribute id="LACTMETERFACTOR" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LACTMETERFACTOR"/>
+        <keyMapping columnObjectName="all" columnName="LACTMETERFACTOR"/>
+      </attribute>
+      <attribute id="LACTCOMPRESSIBILITYFACTOR" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LACTCOMPRESSIBILITYFACTOR"/>
+        <keyMapping columnObjectName="all" columnName="LACTCOMPRESSIBILITYFACTOR"/>
+      </attribute>
+      <attribute id="GROSSBARRELS" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GROSSBARRELS"/>
+        <keyMapping columnObjectName="all" columnName="GROSSBARRELS"/>
+      </attribute>
+      <attribute id="BSANDW" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BSANDW"/>
+        <keyMapping columnObjectName="all" columnName="BSANDW"/>
+      </attribute>
+      <attribute id="ACTUALGRAVITY" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTUALGRAVITY"/>
+        <keyMapping columnObjectName="all" columnName="ACTUALGRAVITY"/>
+      </attribute>
+      <attribute id="OBSERVEDTEMPRATURE" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="OBSERVEDTEMPRATURE"/>
+        <keyMapping columnObjectName="all" columnName="OBSERVEDTEMPRATURE"/>
+      </attribute>
+      <attribute id="CONVERTEDGRAVITY" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONVERTEDGRAVITY"/>
+        <keyMapping columnObjectName="all" columnName="CONVERTEDGRAVITY"/>
+      </attribute>
+      <attribute id="NETBARRELS" order="39" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NETBARRELS"/>
+        <keyMapping columnObjectName="all" columnName="NETBARRELS"/>
+      </attribute>
+      <attribute id="CREATEDBYNAME" order="40" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CREATEDBYNAME"/>
+        <keyMapping columnObjectName="all" columnName="CREATEDBYNAME"/>
+      </attribute>
+      <attribute id="CREATEDBYID" order="41" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CREATEDBYID"/>
+        <keyMapping columnObjectName="all" columnName="CREATEDBYID"/>
+      </attribute>
+      <attribute id="CREATEDON" order="42" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CREATEDON"/>
+        <keyMapping columnObjectName="all" columnName="CREATEDON"/>
+      </attribute>
+      <attribute id="REVIEWEDBYNAME" order="43" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REVIEWEDBYNAME"/>
+        <keyMapping columnObjectName="all" columnName="REVIEWEDBYNAME"/>
+      </attribute>
+      <attribute id="REVIEWEDBYID" order="44" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REVIEWEDBYID"/>
+        <keyMapping columnObjectName="all" columnName="REVIEWEDBYID"/>
+      </attribute>
+      <attribute id="REVIEWEDON" order="45" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REVIEWEDON"/>
+        <keyMapping columnObjectName="all" columnName="REVIEWEDON"/>
+      </attribute>
+      <attribute id="SERIALNO" order="46" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SERIALNO"/>
+        <keyMapping columnObjectName="all" columnName="SERIALNO"/>
+      </attribute>
+      <attribute id="COMMENTS" order="47" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COMMENTS"/>
+        <keyMapping columnObjectName="all" columnName="COMMENTS"/>
+      </attribute>
+      <attribute id="COMMENTEDBYNAME" order="48" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COMMENTEDBYNAME"/>
+        <keyMapping columnObjectName="all" columnName="COMMENTEDBYNAME"/>
+      </attribute>
+      <attribute id="COMMENTEDBYID" order="49" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COMMENTEDBYID"/>
+        <keyMapping columnObjectName="all" columnName="COMMENTEDBYID"/>
+      </attribute>
+      <attribute id="COMMENTEDON" order="50" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COMMENTEDON"/>
+        <keyMapping columnObjectName="all" columnName="COMMENTEDON"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures>
+      <measure id="id" hidden="false" order="14" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <descriptions defaultDescription="id"/>
+        <formula>1</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="DORT_HEADER" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="DROP_COMMENTS" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="HEADR_CMNT" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="DROPATTCH" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="360" y="350"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="HEDR_CMND_ATTCH" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="ACtivity_log" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="all" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

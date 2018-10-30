@@ -1,0 +1,22 @@
+{
+
+  "description": "Job to insert the data into the lookup table",
+
+  "action": "DORT:InserttheLookUp.xsjs::InsertTheLookUp",
+
+  "schedules":
+
+  [
+
+  {
+
+  "description": "This scheduler runs every 1 minutes to insert the data to the lookup table",
+  
+  "xscron": "* * * * * * 59"
+ 
+
+  }
+
+  ]
+
+}
